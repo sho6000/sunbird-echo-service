@@ -4,6 +4,7 @@ COPY . /app
 RUN npm install
 
 FROM dhi.io/node:22.15
+USER node
 COPY --from=builder /app .
 EXPOSE 9595
 CMD [ "node", "index.js" ]
